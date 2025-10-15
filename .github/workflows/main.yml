@@ -29,6 +29,7 @@ jobs:
           push: true
           tags: shashiahi/app:latest
       # Scan image using Docker Scout
-      - name: Scan Docker Image with Docker Scout
-        run: |
-          docker scout quickscan shashiahi/app:latest
+      - name: Scan Docker Image
+        uses: docker/scan-action@v2
+        with:
+          image: shashiahi/app:latest
